@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title>Rating System Css and Jquery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<link rel="icon" href="LightStar.png">
+</head>
+
+<style>
+
+
+*{
+	border-radius: 0px !important;
+    padding: 0px !important;
+    
+}
+.well{
+	border-radius: 0px;
+}
+.navbar,.well{
+	background-color: rgb(255,255,255);
+	 -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+   	box-shadow:0px 1px 1px rgba(0,0,0,0.3);
+	border-left: 4px solid rgba(0,0,102,0.7);
+}
+.nopadding{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+</style>
+
+<body style="background-color: rgba(0,0,0,0.07);">
+
+
+<header></header>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+    	<div class="navbar-header rlimage">
+      		
+    	</div>
+    	<form class="navbar-form" role="search">
+		<div class="input-group">
+    		<span class="input-group-btn" style="width:0;">
+    		</span>
+		</div>
+		</form>
+	</div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 100px">
+
+<div class ="row" style="margin-left: 10px" id="rowbox">
+    <div class ="col-sm-1" id="1" onmouseover="calculate(id)" onclick="status(id)">
+        <img alt="Brand" src="LightStar.png" style="width:100px;height:100px" class="img-responsive" id="1img">
+    </div>
+    <div class ="col-sm-1" id="2" onmouseover="calculate(id)" onclick="status(id)">
+        <img alt="Brand" src="LightStar.png" style="width:100px;height:100px" class="img-responsive" id="2img">
+    </div>
+    <div class ="col-sm-1" id="3" onmouseover="calculate(id)" onclick="status(id)">
+        <img alt="Brand" src="LightStar.png" style="width:100px;height:100px" class="img-responsive"id="3img">
+    </div>
+    <div class ="col-sm-1" id="4" onmouseover="calculate(id)" onclick="status(id)">
+        <img alt="Brand" src="LightStar.png" style="width:100px;height:100px" class="img-responsive"id="4img">
+    </div>
+    <div class ="col-sm-1" id="5" onmouseover="calculate(id)" onclick="status(id)">
+        <img alt="Brand" src="LightStar.png" style="width:100px;height:100px" class="img-responsive"id="5img">
+    </div>
+</div>
+
+
+</div> <!-- container-fluid -->
+
+
+
+<script>
+var clicked=false;
+$("#rowbox").mouseleave(function(){
+    if(clicked == false)
+    {
+        for(var i=1;i<=5;i++)
+        {
+        console.log("darkstar");
+        document.getElementById(i+"img").src = "LightStar.png";
+        }
+    }
+        
+});
+
+
+function calculate(divobject) {
+  
+        if(clicked == false)
+        {
+            for(var i=1;i<=divobject;i++)
+            {
+            console.log("darkstar");
+            document.getElementById(i+"img").src = "DarkStar.png";
+            }
+            for(var j=i;j<=5;j++)
+            {
+            console.log("lightstar");
+            document.getElementById(j+"img").src = "LightStar.png";
+            }
+        }           
+}
+
+function status(divobject) {
+    clicked = true;
+
+        for(var i=1;i<=divobject;i++)
+        {
+        console.log("darkstar");
+        document.getElementById(i+"img").src = "DarkStar.png";
+        }
+        for(var j=i;j<=5;j++)
+        {
+        console.log("lightstar");
+        document.getElementById(j+"img").src = "LightStar.png";
+        }
+
+        setTimeout(function(){ alert( divobject + " Rated!!!!"); }, 500);
+}
+</script>
+
+</body>
+</html>
