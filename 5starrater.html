@@ -86,25 +86,29 @@
 var clicked=false;
 var clickedid=0;
 $("#rowbox").mouseleave(function(){
+    console.log("mouse leaves row div");
+    console.log(clickedid);
+    console.log(clicked);
     if(clicked == false)
     {
         for(var i=1;i<=5;i++)
         {
-        console.log("darkstar");
+     
         document.getElementById(i+"img").src = "LightStar.png";
         }
     }
-    else
+    if(clicked == true)
     {
+        console.log("here!");
         for(var i=1;i<=clickedid;i++)
         {
-        console.log("darkstar");
-        document.getElementById(i+"img").src = "DarkStar.png";
+            console.log("darking star");
+        document.getElementById(i+"img").src = "DarkStar1.png";
         }
         for(var j=i;j<=5;j++)
         {
-        console.log("darkstar");
-        document.getElementById(i+"img").src = "LightStar.png";
+            console.log("lighting star");
+        document.getElementById(j+"img").src = "LightStar.png";
         }
     }
         
@@ -113,15 +117,15 @@ $("#rowbox").mouseleave(function(){
 
 function calculate(divobject) {
   
-       
+            console.log("heovring........");
             for(var i=1;i<=divobject;i++)
             {
-            console.log("darkstar");
+     
             document.getElementById(i+"img").src = "DarkStar.png";
             }
             for(var j=i;j<=5;j++)
             {
-            console.log("lightstar");
+    
             document.getElementById(j+"img").src = "LightStar.png";
             }
                    
@@ -130,14 +134,14 @@ function calculate(divobject) {
 function status(divobject) {
     clicked = true;
     clickedid = divobject;
+    console.log("clickedonit")
+        
         for(var i=1;i<=divobject;i++)
         {
-        console.log("darkstar");
-        document.getElementById(i+"img").src = "DarkStar.png";
+        document.getElementById(i+"img").src = "DarkStar1.png";
         }
         for(var j=i;j<=5;j++)
         {
-        console.log("lightstar");
         document.getElementById(j+"img").src = "LightStar.png";
         }
 
